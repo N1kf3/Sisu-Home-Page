@@ -1,5 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store/appContext";
+import IMAGES from "./images";
+
 
 export const FrontPageOptions =()=>{
     const [viewPic, getViewPic] = useState(0)
@@ -10,7 +12,7 @@ export const FrontPageOptions =()=>{
 
     
     useEffect(()=>{
-        reduceArr()
+        reduceArr()        
     })
 
     const slipArr=(arr)=>{
@@ -19,20 +21,23 @@ export const FrontPageOptions =()=>{
         for (let i=0;i<3;i++){
             newarr[i]= []
             for (let j=0;j<6;j++){
-                newarr[i][j]=arr[cont]
-                cont = cont +1
+                if (arr[cont]!= undefined){
+                    newarr[i][j]=arr[cont]
+                    cont = cont +1
+                }
             }            
         }
+        console.log("reducido", newarr)
         
+       
         return newarr
     }
 
     const reduceArr=()=>{
         if (picArr.length ==0){
-            let ar = store.picturesArray.slice(0,18)
-            console.log(store.picturesArray)
+            let ar = IMAGES.slice(0,18)          
             getViewArr(slipArr(ar))
-            getPicArr(store.picturesArray)
+            getPicArr(IMAGES)
             
         }
     }
@@ -44,34 +49,23 @@ export const FrontPageOptions =()=>{
         getViewPic(pos)
     }
 
-    const getId=(pic)=>{
-        console.log(typeof pic)
-        let pos = pic.indexOf(".png")
-        let dec= pic[pos-2]
-        let uni = pic[pos-1]
-        if (parseInt(dec)>= 0){
-            return (dec+uni)
-        }
-        else { return(uni)}
-
-    }
-
     const selectloc = (id)=>{    
         getLoc(id)
+        store.notebook['frontPage']=id
     }
 
 
     return(
         <div> escoge la portada
-
+          
             <div className="container text-center ">
                 <div className="container text-center">
-                    {store.picturesArray?(viewArr.map((item,index)=>
+                    {viewArr?(viewArr.map((item,index)=>
                         <div key={index} id={index}className="row">
                             {item.map((pic,index)=>
-                                <div className="col" key={index} id={pic["val"]}>
-                                    {pic["route"]} 
-                                    <input type="checkbox"id={pic["val"]} onChange={(e)=>selectloc(e.target.id)} checked={loc==pic["val"]? true:false}/>
+                                <div className="col-2" key={index} id={pic["id"]}>
+                                    <img src={pic["image"]} className="img-thumbnail" alt="..."/>
+                                    <input type="checkbox"id={pic["id"]} onChange={(e)=>selectloc(e.target.id)} checked={loc==pic["id"]? true:false}/>
                                 </div>)}
                         </div>)):(<div>cargando info</div>)}
                     

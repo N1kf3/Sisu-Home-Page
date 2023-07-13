@@ -23,8 +23,7 @@ export const Home = () => {
         for (let i=0; i<63;i++){
             arr.push({route:`../src/img/portadas/${i}.png`, val:i})
         }
-        store.picturesArray=arr
-		console.log("home",store.picturesArray)
+        store.picturesArray=arr		
     
 
 

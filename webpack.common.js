@@ -29,7 +29,9 @@ module.exports = {
         {
           test: /\.(png|svg|jpg|gif|jpeg|webp)$/, use: {
             loader: 'file-loader',
-            options: { name: '[name].[ext]' }
+            options: { name: '[name].[ext]' ,
+            outputPath: 'images',
+          }
           }
         }, //for images
         { test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/, use: ['file-loader'] } //for fonts

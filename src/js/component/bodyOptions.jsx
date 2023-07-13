@@ -29,8 +29,8 @@ export const BodyOptions =()=>{
             return(
                 <div>
                     <ul className="no-list">
-                        <li> <input type="checkbox" name="Sup" id="Sup" onChange={(e)=>selectloc(e.target.id)} checked={loc=="Sup"? true:false}/> Sup</li>
-                        <li> <input type="checkbox" name="Inf" id="Inf" onChange={(e)=>selectloc(e.target.id)} checked={loc=="Inf"? true:false}/> Inf</li>
+                        <li> <input type="checkbox" name="Sup" id="Sup" onChange={(e)=>selectloc(e.target.id)} checked={loc=="Sup"? true:false}/> Espiral superior</li>
+                        <li> <input type="checkbox" name="left" id="left" onChange={(e)=>selectloc(e.target.id)} checked={loc=="left"? true:false}/> Espiral a la izquierda</li>
                     </ul>
                 </div>
             )

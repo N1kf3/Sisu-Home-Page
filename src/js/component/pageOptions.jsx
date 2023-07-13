@@ -16,7 +16,7 @@ export const PageOptions =()=>{
         Tipos de hojas.
         <div className="d-flex justify-content-evenly">
             <ul className="no-list">
-                <li> <input type="checkbox" name="Grande" id="Linea" onChange={(e)=>selectPageType(e.target.id)} checked={page=="Linea"? true:false}/> Hoja de 1 lina</li>
+                <li style={{ display: `${store.notebook['size']!= "Grande"?"none":"inline"}`}}> <input type="checkbox" name="Grande" id="Linea" onChange={(e)=>selectPageType(e.target.id)} checked={page=="Linea"? true:false} /> Hoja de 1 lina</li>
                 <li> <input type="checkbox" name="Mediana" id="Blanca" onChange={(e)=>selectPageType(e.target.id)} checked={page=="Blanca"? true:false}/> Hoja blanca</li>
                 <li> <input type="checkbox" name="Pequeña" id="Cuadr" onChange={(e)=>selectPageType(e.target.id)} checked={page=="Cuadr"? true:false}/> Hoja cuadriculada</li>
             </ul>
