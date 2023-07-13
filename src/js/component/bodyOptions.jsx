@@ -17,6 +17,10 @@ export const BodyOptions =()=>{
         getSize(id)
         store.notebook['size']=id
         getLoc("none")
+        if (id =="Grande")
+            store.notebook["location"]="izquierda"
+        else 
+            store.notebook["location"]="none"
     }
 
     const selectloc = (id)=>{
@@ -29,8 +33,8 @@ export const BodyOptions =()=>{
             return(
                 <div>
                     <ul className="no-list">
-                        <li> <input type="checkbox" name="Sup" id="Sup" onChange={(e)=>selectloc(e.target.id)} checked={loc=="Sup"? true:false}/> Espiral superior</li>
-                        <li> <input type="checkbox" name="left" id="left" onChange={(e)=>selectloc(e.target.id)} checked={loc=="left"? true:false}/> Espiral a la izquierda</li>
+                        <li> <input type="checkbox" name="Superior" id="Superior" onChange={(e)=>selectloc(e.target.id)} checked={loc=="Superior"? true:false}/> Espiral superior</li>
+                        <li> <input type="checkbox" name="izquierda" id="izquierda" onChange={(e)=>selectloc(e.target.id)} checked={loc=="izquierda"? true:false}/> Espiral a la izquierda</li>
                     </ul>
                 </div>
             )
