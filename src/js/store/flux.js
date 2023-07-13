@@ -1,18 +1,13 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
+			notebook: {
+				size : "none",
+				location: "none",
+				page : "none",
+				frontPage :"none"
+			},	
+			picturesArray:[]
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
