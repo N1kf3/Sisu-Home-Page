@@ -55,7 +55,7 @@ export const BodyOptions =()=>{
                     <li> <input type="checkbox" name="Pequeña" id="Pequeña" onChange={(e)=>selectsize(e.target.id)} checked={size=="Pequeña"? true:false}/> Pequeña</li>
                 </ul>
                 <div>
-                    {size=="none"? (size):selectSpiral(size)}
+                    {size=="none"? (""):selectSpiral(size)}
                 </div>
             </div>
 

@@ -27,9 +27,6 @@ export const FrontPageOptions =()=>{
                 }
             }            
         }
-        console.log("reducido", newarr)
-        
-       
         return newarr
     }
 
@@ -64,7 +61,7 @@ export const FrontPageOptions =()=>{
                         <div key={index} id={index}className="row">
                             {item.map((pic,index)=>
                                 <div className="col-2" key={index} id={pic["id"]}>
-                                    <img src={pic["image"]} className="img-thumbnail" alt="..."/>
+                                    <img src={pic["image"]} className="img-thumbnail" alt="..." htmlFor={pic["id"]}/>
                                     <input type="checkbox"id={pic["id"]} onChange={(e)=>selectloc(e.target.id)} checked={loc==pic["id"]? true:false}/>
                                 </div>)}
                         </div>)):(<div>cargando info</div>)}
