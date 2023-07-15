@@ -11,7 +11,7 @@ import emailjs, { sendForm } from '@emailjs/browser';
 
 //create your first component
 export const Home = () => {
-	const [page, getPage]= useState(-1)//cambiar a -1
+	const [page, getPage]= useState(2)//cambiar a -1
 	const {store, actions}=useContext(Context)
 	const [userName, getUsername]= useState("")
 	const [userID, getUserID]= useState("")
@@ -77,19 +77,21 @@ export const Home = () => {
 
 
 	return (
-		<div className="">
-			<div className="container border " id=""> 
-				<div className="" style={{ display: `${page==3?"none":"inline"}`}}>			
+		<div className="" >
+			<div className="container border h100" id=""> 
+				<div className="interno " style={{ display: `${page==3?"none":"inline"}`}}>			
 					{page == -1? (<div>Empezar o instrucciones </div>):(viewPage())}
 				</div>
-				<div style={{ display: `${page==3?"inline":"none"}`}}>
+				<div className=" "style={{ display: `${page==3?"inline":"none"}`}}>
 					<div className="d-flex justify-content-center container" >
-						<div className="border p-5 me-4 w-50"  > Resumen de la libreta
+						<div className="border p-5 me-4 w-50 "  > Resumen de la libreta
 							<p>Tamaño: {store.notebook['size']}</p>
 							<p>Ubicacion de la espiral: {store.notebook['location']}</p>
 							<p>Tipo de hoja: {store.notebook['page']}</p>
-							<p>Portada escogida:</p>
-							{store.notebook['frontPage'] =='none'?("Sin imgen seleccionada"):(<img src={`images/${store.notebook['frontPage']}.png`} className="img-thumbnail w-50" alt="..."/>)}  
+							<p>Portada elegida:</p>
+							<div className="text-center">
+								{store.notebook['frontPage'] =='none'?("Sin imgen seleccionada"):(<img src={`images/${store.notebook['frontPage']}.png`} className="img-thumbnail w-50" alt="..."/>)}  
+							</div>
 							
 						</div>
 						<form className="ms-4 border d-flex flex-column p-5" reft={form} >					
@@ -108,7 +110,7 @@ export const Home = () => {
 
 				</div>
         	</div>
-			<div className="container d-flex justify-content-end mt-2">
+			<div className="container d-flex justify-content-between mt-2">
 				<button className="me-4" onClick={(e)=>nextPage(-1)}  style={{ display: `${page==-1?"none":"inline"}`}}>anterior</button>
 				<button onClick={(e)=>nextPage(1)}   style={{ display: `${page==3?"none":"inline"}`}}>Siguiente</button>
 				<button   style={{ display: `${page==3?"inline":"none"}`}} type="submit" onClick={(e)=>submitForm()}>Enviar informacion</button>

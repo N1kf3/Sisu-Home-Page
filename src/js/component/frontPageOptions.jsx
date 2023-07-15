@@ -53,9 +53,9 @@ export const FrontPageOptions =()=>{
 
 
     return(
-        <div> escoge la portada
+        <div className="d-flex flex-column justify-content-between"> escoge la portada
           
-            <div className="container text-center ">
+            <div className="container  ">
                 <div className="container text-center">
                     {viewArr?(viewArr.map((item,index)=>
                         <div key={index} id={index}className="row">
@@ -69,8 +69,10 @@ export const FrontPageOptions =()=>{
         
                 </div>
             </div>
-            <button onClick={(e)=>runpic(-1)}  disabled={viewPic==0?true:false}>{"<--"} </button>
-            <button onClick={(e)=>runpic(1)} disabled={viewPic==3?true:false}>{"-->"} </button>
+            <div className="">
+                <button onClick={(e)=>runpic(-1)}  disabled={viewPic==0?true:false}>{"<--"} </button>
+                <button onClick={(e)=>runpic(1)} disabled={viewPic==3?true:false}>{"-->"} </button>
+            </div>
 
 
         </div>
