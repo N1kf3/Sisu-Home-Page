@@ -3,8 +3,11 @@ import { Link } from "react-router-dom";
 
 export const Navbar = () => {
 	return (
-		<nav className="navbar navbar-light bg-light mb-3">
-			SISU PALELERIA (logo)
+		<nav className="navbar navbar-light bg-light mb-3 text-center">
+			
+			<span class="navbar-text">
+				SISU PALELERIA (logo)
+    		</span>
 		</nav>
 	);
 };

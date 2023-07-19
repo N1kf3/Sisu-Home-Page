@@ -46,7 +46,7 @@ export const BodyOptions =()=>{
     }
 
     return (
-        <div className="border px-5" > 
+        <div className="border px-5 h100 d-flex align-items-center" > 
             Tamaño de la libreta.
             <div className="d-flex justify-content-evenly">
                 <ul className="no-list">

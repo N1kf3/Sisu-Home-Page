@@ -12,7 +12,7 @@ export const FrontPageOptions =()=>{
 
     
     useEffect(()=>{
-        reduceArr()        
+        reduceArr()           
     })
 
     const slipArr=(arr)=>{
@@ -45,6 +45,12 @@ export const FrontPageOptions =()=>{
         getViewArr(slipArr(ar))
         getViewPic(pos)
     }
+    const runpic2=(num)=>{
+        let pos = num-1
+        let ar = picArr.slice((pos*18),(18*pos)+18)
+        getViewArr(slipArr(ar))
+        getViewPic(pos)
+    }
 
     const selectloc = (id)=>{    
         getLoc(id)
@@ -53,26 +59,26 @@ export const FrontPageOptions =()=>{
 
 
     return(
-        <div className="d-flex flex-column justify-content-between"> escoge la portada
-          
-            <div className="container  ">
-                <div className="container text-center">
-                    {viewArr?(viewArr.map((item,index)=>
-                        <div key={index} id={index}className="row">
-                            {item.map((pic,index)=>
-                                <div className="col-2" key={index} id={pic["id"]}>
-                                    <img src={pic["image"]} className="img-thumbnail" alt="..." htmlFor={pic["id"]}/>
-                                    <input type="checkbox"id={pic["id"]} onChange={(e)=>selectloc(e.target.id)} checked={loc==pic["id"]? true:false}/>
-                                </div>)}
-                        </div>)):(<div>cargando info</div>)}
-                    
+        <div className="d-flex flex-column justify-content-between h100">
         
-                </div>
+            <div className="container">
+                {viewArr?(viewArr.map((item,index)=>
+                    <div key={index} id={index}className="row">
+                        {item.map((pic,index)=>
+                            <div className="col d-flex flex-column mt-2 text-center align-items-center" key={index} id={pic["id"]}>
+                                <img src={pic["image"]} className="hpic" alt="..." htmlFor={pic["id"]}/>
+                                <input className="mt-2"type="checkbox"id={pic["id"]} onChange={(e)=>selectloc(e.target.id)} checked={loc==pic["id"]? true:false}/>
+                            </div>)}
+                    </div>)):(<div>cargando info</div>)}
             </div>
-            <div className="">
-                <button onClick={(e)=>runpic(-1)}  disabled={viewPic==0?true:false}>{"<--"} </button>
-                <button onClick={(e)=>runpic(1)} disabled={viewPic==3?true:false}>{"-->"} </button>
+            <div className=" d-flex justify-content-center">           
+                <button className="ms-2" onClick={(e)=>runpic2(1)} disabled={viewPic==0?true:false}>1 </button>
+                <button className="ms-2" onClick={(e)=>runpic2(2)} disabled={viewPic==1?true:false}>2 </button>
+                <button className="ms-2" onClick={(e)=>runpic2(3)} disabled={viewPic==2?true:false}>3 </button>
+                <button className="ms-2" onClick={(e)=>runpic2(4)} disabled={viewPic==3?true:false}>4 </button>
+                <button className="ms-2" onClick={(e)=>runpic2(5)} disabled={viewPic==4?true:false}>5 </button>
             </div>
+          
 
 
         </div>

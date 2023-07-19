@@ -13,7 +13,7 @@ export const PageOptions =()=>{
     }
 
     return(
-        <div className="border px-5" > 
+        <div className="border px-5 h100 d-flex align-items-center " > 
         Tipos de hojas.
         <div className="d-flex justify-content-evenly">
             <ul className="no-list">

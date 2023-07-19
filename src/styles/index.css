@@ -18,5 +18,9 @@
   }
 
   .h100{
-    height: 849px;
+    height: 90vh;
+  }
+
+  .hpic{
+    width: 9vw;
   }
