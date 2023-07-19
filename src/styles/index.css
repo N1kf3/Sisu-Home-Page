@@ -18,9 +18,16 @@
   }
 
   .h100{
-    height: 90vh;
+    height: 80vh;
   }
 
   .hpic{
     width: 9vw;
   }
+
+  .list-history{
+ 
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
