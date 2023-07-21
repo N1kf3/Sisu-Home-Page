@@ -46,14 +46,18 @@ export const SendInfo =()=>{
     return(
         <div className=" h100 d-flex align-items-center">
             <div className="d-flex justify-content-center container" >
-                <div className="border p-5 me-4 w-50 "  > Resumen de la libreta
-                    <p>Tamaño: {store.notebook['size']}</p>
-                    <p>Ubicacion de la espiral: {store.notebook['location']}</p>
-                    <p>Tipo de hoja: {store.notebook['page']}</p>
-                    <p>Portada elegida:</p>
-                    <div className="text-center">
-                        {store.notebook['frontPage'] =='none'?("Sin imgen seleccionada"):(<img src={`images/${store.notebook['frontPage']}.png`} className="img-thumbnail w-50" alt="..."/>)}  
-                    </div>						
+                <div className="border p-5 me-4 w-50 "  > 
+                    <h5>Resumen de la libreta</h5>
+                    <ul>
+                        <li>Tamaño: {store.notebook['size']}</li>
+                        <li>Ubicacion de la espiral: {store.notebook['location']}</li>
+                        <li>Tipo de hoja: {store.notebook['page']}</li>
+                        <li>Portada elegida:
+                            <div className="text-center mt-4">
+                            {store.notebook['frontPage'] =='none'?("Sin portada seleccionada"):(<img src={`images/${store.notebook['frontPage']}.png`} className="img-thumbnail w-50" alt="..."/>)}  
+                            </div>	
+                        </li>                      
+                    </ul>                 					
                 </div>
 
                 <form className="ms-4 border d-flex flex-column p-5" reft={form} >					
