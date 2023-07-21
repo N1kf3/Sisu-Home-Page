@@ -52,7 +52,7 @@ export const SendInfo =()=>{
                         <li>Tamaño: {store.notebook['size']}</li>
                         <li>Ubicacion de la espiral: {store.notebook['location']}</li>
                         <li>Tipo de hoja: {store.notebook['page']}</li>
-                        <li>Portada elegida:
+                        <li>Portada elegida: #{store.notebook['frontPage']}
                             <div className="text-center mt-4">
                             {store.notebook['frontPage'] =='none'?("Sin portada seleccionada"):(<img src={`images/${store.notebook['frontPage']}.png`} className="img-thumbnail w-50" alt="..."/>)}  
                             </div>	
